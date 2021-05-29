@@ -7,8 +7,6 @@ int main()
     int s;
     s=sum(20,10);
     printf("The output is:\t%d",s);
-    div(8,4);
-    mul();
 }
 int sum(int a,int b)
 {
