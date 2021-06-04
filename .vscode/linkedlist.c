@@ -118,6 +118,35 @@ void deleteend()
         free(temp);
     }
 }
+void insert_node()
+{
+    struct node *temp;
+    struct node *newnode;
+    int value;
+    if (start == NULL)
+    {
+        printf("The List is empty");
+    }
+    else
+    {
+        printf("Enter the value to insert\n");
+        scanf("%d", &value);
+        temp = start;
+        while (temp != NULL && temp->info != value)
+        {
+            temp = temp->next;
+        }
+        if (temp == NULL)
+        {
+            printf("Node is not present\n");
+        }
+        else
+        {
+            newnode->next = temp->next;
+            temp->next = newnode;
+        }
+    }
+}
 int main()
 {
     int choice;
@@ -128,7 +157,8 @@ int main()
         printf("3.To Insert at end\n");
         printf("4.To Delete from begining\n");
         printf("5.To Delete from end\n");
-        printf("6.To exit");
+        printf("6.Insert a node after given node\n");
+        printf("7.To exit");
         printf("\nEnter the operation you want to perform  :\t ");
         scanf("%d", &choice);
         switch (choice)
@@ -149,6 +179,9 @@ int main()
             deleteend();
             break;
         case 6:
+            insert_node();
+            break;
+        case 7:
             exit(0);
             break;
         default:
