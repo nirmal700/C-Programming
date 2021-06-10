@@ -91,35 +91,30 @@ void delete ()
 }
 void display()
 {
-    int i;
-    int frontl, rearl;
-    frontl = front;
-    rearl = rear;
-    if (frontl == -1)
+    int index;
+    if (front == -1)
     {
         printf("Stack underflow");
     }
     else
     {
-        if (frontl < rearl)
-            while (frontl <= rearl)
+        if (front <= rear)
+        {
+            for (index = front; index <= rear; index++)
             {
-                printf("%d\n", queue[frontl]);
-                frontl++;
+                printf("%d\n", queue[index]);
             }
+        }
         else
         {
-
-            while (frontl <= size - 1)
+            for (index = front; index < size; index++)
             {
-                printf("%d\n", queue[frontl]);
-                frontl++;
+                printf("%d\n", queue[index]);
             }
-            frontl = 0;
-            while (frontl <= rearl)
+
+            for (index = 0; index <=rear; index++)
             {
-                printf("%d\n", queue[frontl]);
-                frontl++;
+                printf("%d\n", queue[index]);
             }
         }
     }
